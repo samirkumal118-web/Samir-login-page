@@ -1,0 +1,127 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(-45deg, #1f2937, #0f172a, #0ea5e9, #f97316);
+  background-size: 400% 400%;
+  animation: bgMove 12s ease infinite;
+}
+
+@keyframes bgMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.login-card {
+  width: 320px;
+  padding: 30px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.35);
+  color: #f8fafc;
+  text-align: center;
+}
+
+.login-card h2 {
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 22px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px 5px;
+  border: none;
+  border-bottom: 2px solid rgba(248,250,252,0.5);
+  background: transparent;
+  color: #f8fafc;
+  font-size: 16px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.input-group label {
+  position: absolute;
+  left: 5px;
+  top: 10px;
+  color: rgba(248,250,252,0.7);
+  pointer-events: none;
+  transition: 0.3s;
+}
+
+.input-group input:focus + label,
+.input-group input:valid + label {
+  top: -12px;
+  font-size: 12px;
+  color: #f8fafc;
+}
+
+.input-group input:focus {
+  border-color: #f97316;
+}
+
+.options {
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+.options a {
+  color: #cbd5e1;
+  font-size: 13px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.options a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #0ea5e9, #f97316);
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.06);
+  box-shadow:
+    0 0 10px #0ea5e9,
+    0 0 25px #f97316;
+}
+
+button, input, a {
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 400px) {
+  .login-card {
+    width: 90%;
+  }
+}
